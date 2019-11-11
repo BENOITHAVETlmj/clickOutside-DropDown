@@ -1,26 +1,24 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useRef, useState } from 'react';
+import DropDown from './DropDown';
+import useClickOutside from './UseClickOutside';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => {
+	const [ isOpened, setIsOpened ] = useState(false);
+	const dropDownRef = useRef();
+
+	useClickOutside(dropDownRef, () => {
+		if (isOpened) setIsOpened(false);
+	});
+	return (
+		<div className="App">
+			<button onClick={() => setIsOpened(!isOpened)}>
+				WHO IS THE GOAT?<span role="img" aria-label="ball">
+					🏀
+				</span>
+			</button>
+			{isOpened && <DropDown dropDownRef={dropDownRef} isOpened={isOpened} setIsOpened={setIsOpened} />}
+		</div>
+	);
+};
 
 export default App;
