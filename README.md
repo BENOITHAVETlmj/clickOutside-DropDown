@@ -1,6 +1,6 @@
 https://add-dropdown-clickoutside.herokuapp.com/
 
-
+Dropdown closes when the user is clicking outside of the element or the button.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
