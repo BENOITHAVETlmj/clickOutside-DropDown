@@ -8,7 +8,7 @@ const Players = [
 ];
 const DropDown = ({ dropDownRef, setIsOpened }) => {
 	return (
-		<div ref={dropDownRef}  className="DropDown-container">
+		<div ref={dropDownRef} className="DropDown-container">
 			{Players &&
 				Players.map((player) => (
 					<li onClick={() => setIsOpened(false)} key={player.name}>
