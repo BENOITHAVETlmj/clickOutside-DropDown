@@ -9,6 +9,7 @@ const App = () => {
 	useClickOutside(dropDownRef, () => {
 		if (isOpened) setIsOpened(false);
 	});
+
 	return (
 		<div className="App">
 			<button onClick={() => setIsOpened(!isOpened)}>
